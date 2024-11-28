@@ -20,7 +20,7 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
     0: "Kondisi Serius",
     1: "Stunting",
     2: "Normal",
-    3: "SHINZOU WO SASAGEYO",
+    3: "Tinggi Badan di atas Rata",
   };
 
   const formatResult = (result: number) => {
