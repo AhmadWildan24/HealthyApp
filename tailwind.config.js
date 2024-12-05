@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import tailwindcssAnimate from "tailwindcss-animate";
+
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}"],
@@ -12,5 +15,5 @@ export default {
       colors: {},
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
