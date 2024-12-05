@@ -11,6 +11,7 @@ interface PopUpPropsUser {
 }
 
 const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [predictionResult, setPredictionResult] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);

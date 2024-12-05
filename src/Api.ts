@@ -1,4 +1,4 @@
-const BASE_URL = "https://6801-158-140-174-1.ngrok-free.app";
+const BASE_URL = "https://e978-103-179-248-224.ngrok-free.app";
 
 export const setPredictStunting = async (features: [number, number, number]) => {
   const response = await fetch(`${BASE_URL}/predict-stunting`, {
