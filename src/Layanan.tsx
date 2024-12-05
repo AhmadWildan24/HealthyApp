@@ -39,17 +39,17 @@ const Layanan = () => {
         {/* Container Layanan */}
         <div className="flex flex-col md:flex-row justify-center items-center mx-auto  space-y-8 md:space-y-0 md:space-x-12 w-full max-w-4xl px-6 md:px-0 min-h-[320px] md:min-h-[320px]">
           {/* Informasi Posyandu */}
-          <Link to="/formstunting" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#135D66] text-white shadow-md">
+          <Link to="/formstunting" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#FFA27F] text-white shadow-md">
             <h5 className="text-[20px] font-semibold pt-4 poppins">Stunting Detection</h5>
             <p className="text-sm text-darkGrayishBlue text-center md:text-center">Temukan jadwal dan lihat kegiatan. Akses dengan mudah!</p>
           </Link>
           {/* Stunting Detection */}
-          <Link to="/formdiabetes" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#135D66] text-white shadow-md">
+          <Link to="/formdiabetes" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#FFA27F] text-white shadow-md">
             <h5 className="text-[20px] font-semibold pt-4 poppins">Diabetes Detection</h5>
             <p className="text-sm text-darkGrayishBlue text-center md:text-center">Taklukkan stunting, jaga masa depan anak-anak. Cek sekarang!</p>
           </Link>
           {/* Monitoring Record */}
-          <Link to="/formbmi" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#135D66] text-white shadow-md">
+          <Link to="/formbmi" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#FFA27F] text-white shadow-md">
             <h5 className="text-[20px] font-semibold pt-4 poppins">BMI</h5>
             <p className="text-sm text-darkGrayishBlue text-center md:text-center">Simpan jejak kesehatan dengan mudah</p>
           </Link>
