@@ -13,6 +13,7 @@ interface PopUpPropsUser {
 }
 
 const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [predictionResult, setPredictionResult] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -59,14 +60,16 @@ const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
   return (
     <div>
       <NavBar />
-      <div className="pt-20 pl-[133px]">
-        <h1 className="font-bold poppins text-[40px]">Kenali Risiko Stunting Anak Anda Sejak DIni</h1>
+      <div className="pt-20 pl-24">
+        <h1 className="font-bold poppins text-[40px]">Waspadai Resiko Diabetes Sejak Dini</h1>
         <div className="pr-[133px]">
           <p className="poppins">
-            Stunting adalah kondisi kurang gizi kronis yang dapat memengaruhi tumbuh kembang anak, baik secara fisik maupun kognitif. Dengan mengetahui risiko stunting lebih awal, Anda dapat mengambil langkah-langkah pencegahan yang tepat
-            untuk memastikan anak Anda tumbuh dengan optimal. Gunakan alat prediksi kami yang mudah dan akurat untuk membantu Anda memahami risiko ini.
+            Diabetes, terutama diabetes tipe 2, adalah penyakit yang dapat memengaruhi kualitas hidup dan kesehatan jangka panjang. Mengetahui potensi risiko diabetes sejak dini sangat penting untuk mencegah komplikasi lebih lanjut. Alat
+            prediksi diabetes ini membantu Anda memahami faktor-faktor yang berisiko dan memberikan gambaran mengenai langkah-langkah yang perlu diambil untuk menjaga kesehatan Anda.
           </p>
-          <p className="text-[20px] pt-10 italic">Formulir berikut dirancang untuk membantu Anda mendapatkan hasil prediksi dengan cepat. Pastikan semua data diisi dengan benar untuk hasil yang optimal.</p>
+          <p className="text-[20px] pt-10 italic">
+            Anda hanya perlu mengisi beberapa data kesehatan untuk mendapatkan hasil prediksi risiko diabetes yang cepat dan mudah. Pastikan semua informasi diisi dengan tepat untuk hasil yang lebih akurat.
+          </p>
         </div>
         <form onSubmit={handleSubmit} className="justify-items-center pt-10">
           <div className="grid gap-4 py-4">
@@ -293,7 +296,9 @@ const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-      <p className="text-[20px] pt-10 pb-10 italic pl-[133px] pr-[133px]">Formulir berikut dirancang untuk membantu Anda mendapatkan hasil prediksi dengan cepat. Pastikan semua data diisi dengan benar untuk hasil yang optimal.</p>
+      <p className="text-[20px] pt-10 pb-10 italic pl-[133px] pr-[133px]">
+        Hasil prediksi ini memberikan gambaran mengenai risiko diabetes Anda. Jika hasil menunjukkan potensi tinggi, disarankan untuk berkonsultasi dengan dokter untuk pemeriksaan lebih lanjut dan pencegahan yang lebih baik.
+      </p>
     </div>
   );
 };

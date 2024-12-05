@@ -3,6 +3,7 @@ import { Label } from "./components/ui/label";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "./components/ui/select";
 import { handlePredictStunting } from "./Fetch";
 import NavBar from "./NavBar";
 
@@ -15,6 +16,7 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
   const [predictionResult, setPredictionResult] = useState<any>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [genderStatus, setGenderStatus] = useState<string | undefined>(undefined);
   const [features, setFeatures] = useState<[number, number, number]>([0, 0, 0]);
 
   const resultMapping: { [key: number]: string } = {
@@ -52,7 +54,7 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
   return (
     <div>
       <NavBar />
-      <div className="pt-20 pl-[133px]">
+      <div className="pt-20 pl-24">
         <h1 className="font-bold poppins text-[40px]">Kenali Risiko Stunting Anak Anda Sejak DIni</h1>
         <div className="pr-[133px]">
           <p className="poppins">
@@ -63,6 +65,32 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
         </div>
         <form onSubmit={handleSubmit} className="justify-items-center pt-10">
           <div className="grid gap-4 py-4">
+            {/* Input untuk jenis kelamin Bayi */}
+            <div className="grid grid-cols-2 items-center justify-items-start">
+              <Label htmlFor="jeniskelamin" className="text-right">
+                Jenis Kelamin
+              </Label>
+              <Select
+                value={genderStatus}
+                onValueChange={(value) => {
+                  setGenderStatus(value);
+                  const numericValue = Number(value);
+                  setFeatures((prevFeatures) => {
+                    const updatedFeatures = [...prevFeatures] as [number, number, number];
+                    updatedFeatures[0] = numericValue;
+                    return updatedFeatures;
+                  });
+                }}
+              >
+                <SelectTrigger id="jenisKelamin" className="col-span-1">
+                  <SelectValue placeholder="Pilih Jenis Kelamin" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="0">Perempuan</SelectItem>
+                  <SelectItem value="1">Laki-laki</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
             {/* Input untuk Umur Bayi */}
             <div className="grid grid-cols-2 items-center justify-items-start">
               <Label htmlFor="umurBayi" className="text-right   ">
@@ -72,12 +100,12 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
                 id="umurBayi"
                 type="number"
                 placeholder="Umur Bayi"
-                value={features[0] || ""}
+                value={features[1] || ""}
                 onChange={(e) => {
                   const value = Number(e.target.value);
                   setFeatures((prevFeatures) => {
                     const updatedFeatures = [...prevFeatures] as [number, number, number];
-                    updatedFeatures[0] = value;
+                    updatedFeatures[1] = value;
                     return updatedFeatures;
                   });
                 }}
@@ -123,11 +151,20 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setIsDialogOpen(false)}>Ok</AlertDialogCancel>
+            <AlertDialogCancel
+              onClick={() => {
+                setIsDialogOpen(false);
+                window.location.reload();
+              }}
+            >
+              Ok
+            </AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-      <p className="text-[20px] pt-10 pb-10 italic pl-[133px] pr-[133px]">Formulir berikut dirancang untuk membantu Anda mendapatkan hasil prediksi dengan cepat. Pastikan semua data diisi dengan benar untuk hasil yang optimal.</p>
+      <p className="text-[20px] pt-10 pb-10 italic pl-[133px] pr-[133px]">
+        Hasil prediksi ini dapat membantu Anda memahami risiko stunting dan memberikan panduan untuk langkah selanjutnya. Jangan ragu untuk berkonsultasi dengan ahli gizi atau tenaga medis untuk tindakan lebih lanjut.
+      </p>
     </div>
   );
 };

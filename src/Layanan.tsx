@@ -49,7 +49,7 @@ const Layanan = () => {
             <p className="text-sm text-darkGrayishBlue text-center md:text-center">Taklukkan stunting, jaga masa depan anak-anak. Cek sekarang!</p>
           </Link>
           {/* Monitoring Record */}
-          <Link to="/monitoring" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#135D66] text-white shadow-md">
+          <Link to="/formbmi" className="flex flex-col items-center p-6 space-y-4 rounded-lg w-full md:w-1/3 bg-[#135D66] text-white shadow-md">
             <h5 className="text-[20px] font-semibold pt-4 poppins">BMI</h5>
             <p className="text-sm text-darkGrayishBlue text-center md:text-center">Simpan jejak kesehatan dengan mudah</p>
           </Link>
