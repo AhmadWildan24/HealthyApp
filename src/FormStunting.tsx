@@ -20,10 +20,10 @@ const FormStunting: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
   const [features, setFeatures] = useState<[number, number, number]>([0, 0, 0]);
 
   const resultMapping: { [key: number]: string } = {
-    0: "Kondisi Serius",
+    0: "Stunting Serius",
     1: "Stunting",
     2: "Normal",
-    3: "Tinggi Badan di atas Rata",
+    3: "Tinggi Badan di atas Rata Rata",
   };
 
   const formatResult = (result: number) => {
