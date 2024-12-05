@@ -211,7 +211,7 @@ const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
               <Input
                 id="BMI"
                 type="number"
-                placeholder="Umur"
+                placeholder="Nilai BMI"
                 value={features[5] || ""}
                 onChange={(e) => {
                   const value = Number(e.target.value);
@@ -233,7 +233,7 @@ const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
               <Input
                 id="umur"
                 type="number"
-                placeholder="Umur"
+                placeholder="Level Hb41C"
                 value={features[6] || ""}
                 onChange={(e) => {
                   const value = Number(e.target.value);
@@ -255,7 +255,7 @@ const FormDiabetes: React.FC<PopUpPropsUser> = ({ onFetchMessages = () => {} }) 
               <Input
                 id="umur"
                 type="number"
-                placeholder="Umur"
+                placeholder="Level Glukosa Darah"
                 value={features[7] || ""}
                 onChange={(e) => {
                   const value = Number(e.target.value);
