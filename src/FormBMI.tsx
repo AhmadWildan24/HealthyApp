@@ -20,8 +20,19 @@ const FormBMI: React.FC = () => {
     const heightInMeters = height / 100; // Konversi cm ke meter
     const bmi = weight / heightInMeters ** 2;
 
+    let category = "";
+    if (bmi < 18.5) {
+      category = "Berat badan kurang (underweight)";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      category = "Normal (sehat)";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      category = "Kelebihan berat badan (overweight)";
+    } else {
+      category = "Obesitas";
+    }
+
     // Kategori BMI
-    return `BMI Anda adalah : ${bmi.toFixed(2)}`;
+    return `BMI Anda adalah ${bmi.toFixed(2)}. Kategori: ${category}.`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
